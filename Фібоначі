@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    // Функція для розрахунку n-го числа Фібоначчі
+    static int Fibonacci(int n)
+    {
+        if (n <= 1)
+            return n;
+
+        int a = 0, b = 1, temp;
+
+        for (int i = 2; i <= n; i++)
+        {
+            temp = a + b;
+            a = b;
+            b = temp;
+        }
+
+        return b;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.Write("Введіть число: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int result = Fibonacci(n);
+
+        Console.WriteLine($"Число Фібоначчі для {n} = {result}");
+    }
+}
